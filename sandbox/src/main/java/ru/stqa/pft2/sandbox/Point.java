@@ -1,6 +1,4 @@
-package ru.stqa.pft.sandbox;
-
-import com.sun.org.apache.xpath.internal.SourceTree;
+package ru.stqa.pft2.sandbox;
 
 public class Point {
 

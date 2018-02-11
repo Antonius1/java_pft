@@ -1,4 +1,4 @@
-package ru.stqa.pft.sandbox;
+package ru.stqa.pft2.sandbox;
 
 public class HomeWork2 {
   public static void main(String[] args){
