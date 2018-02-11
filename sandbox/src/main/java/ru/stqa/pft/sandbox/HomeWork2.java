@@ -6,6 +6,6 @@ public class HomeWork2 {
     Point p2 = new Point(3, 4);
 
 
-    System.out.println("Расстояние между точками равняется " + p1.distance(p1, p2) );
+    System.out.println("Расстояние между точками равняется " + p1.distance(p2) );
   }
 }
