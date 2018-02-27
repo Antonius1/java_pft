@@ -68,7 +68,8 @@ public class ApplicatoinManager {
   }
 
   public void deleteSelectedContacts() {
-      wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
+    wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
+    wd.switchTo().alert().accept();
   }
 
   public void selectContact() {
