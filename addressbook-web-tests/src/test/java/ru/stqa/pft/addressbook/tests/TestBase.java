@@ -2,11 +2,11 @@ package ru.stqa.pft.addressbook.tests;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import ru.stqa.pft.addressbook.appmanager.ApplicatoinManager;
+import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
 
 public class TestBase {
 
-  protected final ApplicatoinManager app = new ApplicatoinManager();
+  protected final ApplicationManager app = new ApplicationManager();
 
   @BeforeMethod
   public void setUp() throws Exception {
@@ -18,7 +18,7 @@ public class TestBase {
     app.stop();
   }
 
-  public ApplicatoinManager getApp() {
+  public ApplicationManager getApp() {
     return app;
   }
 }
