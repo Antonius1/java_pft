@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
+
   FirefoxDriver wd;
 
   private  ContactHelper contactHelper;
@@ -41,5 +42,4 @@ public class ApplicationManager {
   public ContactHelper getContactHelper() {
     return contactHelper;
   }
-
 }
