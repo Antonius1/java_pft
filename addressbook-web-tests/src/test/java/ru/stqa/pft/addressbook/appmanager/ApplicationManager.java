@@ -27,7 +27,7 @@ public class ApplicationManager {
   }
 
   public void stop() {
-    navigationHelper.wd.quit();
+    wd.quit();
   }
 
   public GroupHelper getGroupHelper() {
