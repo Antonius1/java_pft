@@ -24,6 +24,7 @@ public class ContactHelper extends HelperBase {
   public String toString() {
     return "ContactHelper{" +
             "contactCache=" + contactCache +
+            ", wd=" + wd +
             '}';
   }
 
