@@ -11,37 +11,26 @@ public class ContactData {
   private String group;
   private String mobilePhone;
   private String workPhone;
+  private String allPhones;
 
+  public String getAllPhones() {
+    return allPhones;
+  }
+
+  public ContactData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
+    return this;
+  }
 
 
   public ContactData withId(int id) {
     this.id = id;
-
     return this;
   }
 
   public ContactData withFirstname(String firstname) {
     this.firstname = firstname;
     return this;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return id == that.id &&
-            Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname) &&
-            Objects.equals(homephone, that.homephone) &&
-            Objects.equals(mobilePhone, that.mobilePhone) &&
-            Objects.equals(workPhone, that.workPhone);
-  }
-
-  @Override
-  public int hashCode() {
-
-    return Objects.hash(id, firstname, lastname, homephone, mobilePhone, workPhone);
   }
 
   public ContactData withLastname(String lastname) {
@@ -59,8 +48,31 @@ public class ContactData {
     return this;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id &&
+            Objects.equals(firstname, that.firstname) &&
+            Objects.equals(lastname, that.lastname) &&
+            Objects.equals(homephone, that.homephone) &&
+            Objects.equals(mail, that.mail) &&
+            Objects.equals(group, that.group) &&
+            Objects.equals(mobilePhone, that.mobilePhone) &&
+            Objects.equals(workPhone, that.workPhone) &&
+            Objects.equals(allPhones, that.allPhones);
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(id, firstname, lastname, homephone, mail, group, mobilePhone, workPhone, allPhones);
+  }
+
   public ContactData withGroup(String group) {
     this.group = group;
+
     return this;
   }
 

@@ -73,7 +73,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public void modify(ContactData contact) {
-    initContactModificator();
+    initContactModificationById(contact.getId());
     fillContactForm(contact, false);
     submitContactModificator();
     contactCache = null;
@@ -110,8 +110,8 @@ public class ContactHelper extends HelperBase {
       int id = Integer.parseInt(element.findElement(By.tagName("td")).findElement(By.tagName("input")).getAttribute("value"));
       String firstname = element.findElement(By.xpath(".//td[3]")).getText();
       String lastname = element.findElement(By.xpath(".//td[2]")).getText();
-      String[] phones = element.findElement(By.xpath(".//td[5]")).getText().split("\n");
-      contactCache.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname).withHomephone(phones[0]).withMobilephone(phones[1]).withWorkphone(phones[2]));
+      String allPhones = element.findElement(By.xpath(".//td[6]")).getText();
+      contactCache.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname).withAllPhones(allPhones));
     }
     return new Contacts(contactCache);
   }
@@ -120,8 +120,8 @@ public class ContactHelper extends HelperBase {
     initContactModificationById(contact.getId());
     String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
     String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
-    String home = wd.findElement(By.name("mobile")).getAttribute("value");
-    String mobile = wd.findElement(By.name("home")).getAttribute("value");
+    String home = wd.findElement(By.name("home")).getAttribute("value");
+    String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
     String work = wd.findElement(By.name("work")).getAttribute("value");
     wd.navigate().back();
     return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
@@ -131,6 +131,4 @@ public class ContactHelper extends HelperBase {
   private void initContactModificationById(int id) {
     wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();
   }
-
-
 }
