@@ -20,14 +20,6 @@ public class ContactHelper extends HelperBase {
     super(wd);
   }
 
-  @Override
-  public String toString() {
-    return "ContactHelper{" +
-            "contactCache=" + contactCache +
-            ", wd=" + wd +
-            '}';
-  }
-
   public void returnHome() {
     click(By.linkText("home"));
   }
@@ -44,20 +36,6 @@ public class ContactHelper extends HelperBase {
     wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactHelper that = (ContactHelper) o;
-    return Objects.equals(contactCache, that.contactCache);
-  }
-
-  @Override
-  public int hashCode() {
-
-    return Objects.hash(contactCache);
-  }
-
   public void enterContactData() {
     click(By.xpath("//div[@id='content']/form/input[21]"));
 
@@ -66,6 +44,7 @@ public class ContactHelper extends HelperBase {
   public void fillContactForm(ContactData contactData, boolean creation) {
     type(By.name("firstname"), contactData.getFirstname());
     type(By.name("lastname"), contactData.getLastname());
+    attach(By.name("photo"), contactData.getPhoto());
     type(By.name("home"), contactData.getHomephone());
     type(By.name("mobile"), contactData.getMobilePhone());
     type(By.name("work"), contactData.getWorkPhone());
@@ -129,7 +108,30 @@ public class ContactHelper extends HelperBase {
 
   private  Contacts contactCache = null;
 
+  @Override
+  public String toString() {
+    return "ContactHelper{" +
+            "contactCache=" + contactCache +
+            ", wd=" + wd +
+            '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactHelper that = (ContactHelper) o;
+    return Objects.equals(contactCache, that.contactCache);
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(contactCache);
+  }
+
   public Contacts all() {
+
     if (contactCache != null) {
       return new Contacts(contactCache);
     }
