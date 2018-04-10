@@ -10,6 +10,7 @@ import ru.stqa.pft.addressbook.model.Contacts;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class ContactHelper extends HelperBase {
@@ -17,6 +18,13 @@ public class ContactHelper extends HelperBase {
 
   public ContactHelper(WebDriver wd) {
     super(wd);
+  }
+
+  @Override
+  public String toString() {
+    return "ContactHelper{" +
+            "contactCache=" + contactCache +
+            '}';
   }
 
   public void returnHome() {
@@ -37,6 +45,20 @@ public class ContactHelper extends HelperBase {
 
   public void enterContactData() {
     click(By.xpath("//div[@id='content']/form/input[21]"));
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactHelper that = (ContactHelper) o;
+    return Objects.equals(contactCache, that.contactCache);
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(contactCache);
   }
 
   public void fillContactForm(ContactData contactData, boolean creation) {
