@@ -31,6 +31,7 @@ public class ContactData {
   public ContactData withFirstname(String firstname) {
     this.firstname = firstname;
     return this;
+
   }
 
   public ContactData withLastname(String lastname) {
@@ -38,13 +39,18 @@ public class ContactData {
     return this;
   }
 
-  public ContactData withHomephone(String homephone) {
-    this.homephone = homephone;
-    return this;
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            ", allPhones='" + allPhones + '\'' +
+            '}';
   }
 
-  public ContactData withMail(String mail) {
-    this.mail = mail;
+  public ContactData withHomephone(String homephone) {
+    this.homephone = homephone;
     return this;
   }
 
@@ -56,18 +62,18 @@ public class ContactData {
     return id == that.id &&
             Objects.equals(firstname, that.firstname) &&
             Objects.equals(lastname, that.lastname) &&
-            Objects.equals(homephone, that.homephone) &&
-            Objects.equals(mail, that.mail) &&
-            Objects.equals(group, that.group) &&
-            Objects.equals(mobilePhone, that.mobilePhone) &&
-            Objects.equals(workPhone, that.workPhone) &&
             Objects.equals(allPhones, that.allPhones);
   }
 
   @Override
   public int hashCode() {
 
-    return Objects.hash(id, firstname, lastname, homephone, mail, group, mobilePhone, workPhone, allPhones);
+    return Objects.hash(id, firstname, lastname, allPhones);
+  }
+
+  public ContactData withMail(String mail) {
+    this.mail = mail;
+    return this;
   }
 
   public ContactData withGroup(String group) {
@@ -84,15 +90,6 @@ public class ContactData {
   public ContactData withWorkphone(String workPhone) {
     this.workPhone = workPhone;
     return this;
-  }
-
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id=" + id +
-            ", firstname='" + firstname + '\'' +
-            ", lastname='" + lastname + '\'' +
-            '}';
   }
 
   public int getId() {

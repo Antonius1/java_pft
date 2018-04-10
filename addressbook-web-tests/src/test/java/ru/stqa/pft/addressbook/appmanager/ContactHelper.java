@@ -44,10 +44,6 @@ public class ContactHelper extends HelperBase {
     wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
   }
 
-  public void enterContactData() {
-    click(By.xpath("//div[@id='content']/form/input[21]"));
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -60,6 +56,11 @@ public class ContactHelper extends HelperBase {
   public int hashCode() {
 
     return Objects.hash(contactCache);
+  }
+
+  public void enterContactData() {
+    click(By.xpath("//div[@id='content']/form/input[21]"));
+
   }
 
   public void fillContactForm(ContactData contactData, boolean creation) {
