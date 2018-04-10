@@ -8,19 +8,15 @@ public class ContactData {
   private String lastname;
   private String homephone;
   private String mail;
+  private String mail2;
+  private String mail3;
   private String group;
   private String mobilePhone;
   private String workPhone;
   private String allPhones;
+  private String allEmails;
+  private String address;
 
-  public String getAllPhones() {
-    return allPhones;
-  }
-
-  public ContactData withAllPhones(String allPhones) {
-    this.allPhones = allPhones;
-    return this;
-  }
 
 
   public ContactData withId(int id) {
@@ -31,7 +27,6 @@ public class ContactData {
   public ContactData withFirstname(String firstname) {
     this.firstname = firstname;
     return this;
-
   }
 
   public ContactData withLastname(String lastname) {
@@ -39,36 +34,9 @@ public class ContactData {
     return this;
   }
 
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id=" + id +
-            ", firstname='" + firstname + '\'' +
-            ", lastname='" + lastname + '\'' +
-            ", allPhones='" + allPhones + '\'' +
-            '}';
-  }
-
   public ContactData withHomephone(String homephone) {
     this.homephone = homephone;
     return this;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return id == that.id &&
-            Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname) &&
-            Objects.equals(allPhones, that.allPhones);
-  }
-
-  @Override
-  public int hashCode() {
-
-    return Objects.hash(id, firstname, lastname, allPhones);
   }
 
   public ContactData withMail(String mail) {
@@ -76,9 +44,18 @@ public class ContactData {
     return this;
   }
 
+  public ContactData withMail2(String mail2) {
+    this.mail2 = mail2;
+    return this;
+  }
+
+  public ContactData withMail3(String mail3) {
+    this.mail3 = mail3;
+    return this;
+  }
+
   public ContactData withGroup(String group) {
     this.group = group;
-
     return this;
   }
 
@@ -91,6 +68,36 @@ public class ContactData {
     this.workPhone = workPhone;
     return this;
   }
+
+  public ContactData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
+    return this;
+  }
+
+  public ContactData withAllEmails(String allEmails) {
+    this.allEmails = allEmails;
+    return this;
+  }
+
+  public ContactData withAddress(String address) {
+    this.address = address;
+    return this;
+  }
+
+
+  @Override
+  public String toString() {
+
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            ", allPhones='" + allPhones + '\'' +
+            ", allEmails='" + allEmails + '\'' +
+            ", address='" + address + '\'' +
+            '}';
+  }
+
 
   public int getId() {
     return id;
@@ -112,8 +119,37 @@ public class ContactData {
     return mail;
   }
 
+  public String getMail2() {
+    return mail2;
+  }
+
+  public String getMail3() {
+    return mail3;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id &&
+            Objects.equals(firstname, that.firstname) &&
+            Objects.equals(lastname, that.lastname) &&
+            Objects.equals(group, that.group) &&
+            Objects.equals(allPhones, that.allPhones) &&
+            Objects.equals(allEmails, that.allEmails) &&
+            Objects.equals(address, that.address);
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(id, firstname, lastname, group, allPhones, allEmails, address);
+  }
+
   public String getGroup() {
     return group;
+
   }
 
   public String getMobilePhone() {
@@ -124,4 +160,15 @@ public class ContactData {
     return workPhone;
   }
 
+  public String getAllPhones() {
+    return allPhones;
+  }
+
+  public String getAllEmails() {
+    return allEmails;
+  }
+
+  public String getAddress() {
+    return address;
+  }
 }
