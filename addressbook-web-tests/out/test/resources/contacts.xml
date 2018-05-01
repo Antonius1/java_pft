@@ -1,0 +1,92 @@
+<list>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 0</firstname>
+    <lastname>lastname 0</lastname>
+    <mail>test@test.tt 0</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 1</firstname>
+    <lastname>lastname 1</lastname>
+    <mail>test@test.tt 1</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 2</firstname>
+    <lastname>lastname 2</lastname>
+    <mail>test@test.tt 2</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 3</firstname>
+    <lastname>lastname 3</lastname>
+    <mail>test@test.tt 3</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 4</firstname>
+    <lastname>lastname 4</lastname>
+    <mail>test@test.tt 4</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 5</firstname>
+    <lastname>lastname 5</lastname>
+    <mail>test@test.tt 5</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 6</firstname>
+    <lastname>lastname 6</lastname>
+    <mail>test@test.tt 6</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 7</firstname>
+    <lastname>lastname 7</lastname>
+    <mail>test@test.tt 7</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 8</firstname>
+    <lastname>lastname 8</lastname>
+    <mail>test@test.tt 8</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 9</firstname>
+    <lastname>lastname 9</lastname>
+    <mail>test@test.tt 9</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 10</firstname>
+    <lastname>lastname 10</lastname>
+    <mail>test@test.tt 10</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 11</firstname>
+    <lastname>lastname 11</lastname>
+    <mail>test@test.tt 11</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 12</firstname>
+    <lastname>lastname 12</lastname>
+    <mail>test@test.tt 12</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 13</firstname>
+    <lastname>lastname 13</lastname>
+    <mail>test@test.tt 13</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <firstname>firstname 14</firstname>
+    <lastname>lastname 14</lastname>
+    <mail>test@test.tt 14</mail>
+  </ru.stqa.pft.addressbook.model.ContactData>
+</list>
