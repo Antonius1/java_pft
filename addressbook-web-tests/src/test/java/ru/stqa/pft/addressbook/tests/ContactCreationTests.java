@@ -21,9 +21,9 @@ public class ContactCreationTests extends TestBase {
   @DataProvider
   public Iterator<Object[]> validContacts() {
     List<Object[]> list = new ArrayList<Object[]>();
-    list.add(new Object[]{new ContactData().withFirstname("firstname1").withLastname("lastname 1")});
-    list.add(new Object[]{new ContactData().withFirstname("firstname2").withLastname("lastname 2")});
-    list.add(new Object[]{new ContactData().withFirstname("firstname3").withLastname("lastname 3")});
+    list.add(new Object[]{new ContactData().withFirstname("firstname1").withLastname("lastname 1").withGroup("test1")});
+    list.add(new Object[]{new ContactData().withFirstname("firstname2").withLastname("lastname 2").withGroup("test2")});
+    list.add(new Object[]{new ContactData().withFirstname("firstname3").withLastname("lastname 3").withGroup("test3")});
     return list.iterator();
   }
 
