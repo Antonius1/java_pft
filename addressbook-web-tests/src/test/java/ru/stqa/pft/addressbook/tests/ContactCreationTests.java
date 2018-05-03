@@ -1,14 +1,16 @@
 package ru.stqa.pft.addressbook.tests;
 
 
-
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -16,14 +18,21 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactCreationTests extends TestBase {
 
+  @DataProvider
+  public Iterator<Object[]> validContacts() {
+    List<Object[]> list = new ArrayList<Object[]>();
+    list.add(new Object[]{new ContactData().withFirstname("firstname1").withLastname("lastname 1")});
+    list.add(new Object[]{new ContactData().withFirstname("firstname2").withLastname("lastname 2")});
+    list.add(new Object[]{new ContactData().withFirstname("firstname3").withLastname("lastname 3")});
+    return list.iterator();
+  }
 
-  @Test
-  public void testContactCreation() {
+  @Test(dataProvider = "validContacts")
+  public void testContactCreation(ContactData contact) {
     app.contact().returnHome();
     Contacts before = app.contact().all();
     app.contact().initContactCreation();
-    File photo = new File("src/test/resources/stru.png");
-    ContactData contact = new ContactData().withFirstname("test1").withLastname("test2").withPhoto(photo);
+    //File photo = new File("src/test/resources/stru.png");
     app.contact().create(contact, true);
     app.contact().returnHome();
     assertThat(app.contact().count(), equalTo(before.size() + 1));
@@ -33,7 +42,7 @@ public class ContactCreationTests extends TestBase {
   }
 
 
-  @Test (enabled = false)
+  @Test(enabled = false)
   public void testBadContactCreation() {
     app.contact().returnHome();
     Contacts before = app.contact().all();
