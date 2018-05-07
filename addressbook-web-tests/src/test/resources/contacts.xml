@@ -2,61 +2,19 @@
   <contact>
     <firstname>firstname 0</firstname>
     <lastname>lastname 0</lastname>
+    <mail>test@test.tt 0</mail>
+    <group>test1</group>
   </contact>
   <contact>
     <firstname>firstname 1</firstname>
     <lastname>lastname 1</lastname>
+    <mail>test@test.tt 1</mail>
+    <group>test1</group>
   </contact>
   <contact>
     <firstname>firstname 2</firstname>
     <lastname>lastname 2</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 3</firstname>
-    <lastname>lastname 3</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 4</firstname>
-    <lastname>lastname 4</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 5</firstname>
-    <lastname>lastname 5</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 6</firstname>
-    <lastname>lastname 6</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 7</firstname>
-    <lastname>lastname 7</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 8</firstname>
-    <lastname>lastname 8</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 9</firstname>
-    <lastname>lastname 9</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 10</firstname>
-    <lastname>lastname 10</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 11</firstname>
-    <lastname>lastname 11</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 12</firstname>
-    <lastname>lastname 12</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 13</firstname>
-    <lastname>lastname 13</lastname>
-  </contact>
-  <contact>
-    <firstname>firstname 14</firstname>
-    <lastname>lastname 14</lastname>
+    <mail>test@test.tt 2</mail>
+    <group>test1</group>
   </contact>
 </list>
