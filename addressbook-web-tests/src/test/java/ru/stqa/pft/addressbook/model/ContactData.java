@@ -26,12 +26,15 @@ public class ContactData {
   private String lastname;
 
 
-
   @Override
   public String toString() {
     return "ContactData{" +
-            "firstname='" + firstname + '\'' +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
             ", lastname='" + lastname + '\'' +
+            ", homephone='" + homephone + '\'' +
+            ", mail='" + mail + '\'' +
+            ", address='" + address + '\'' +
             '}';
   }
 
@@ -40,18 +43,25 @@ public class ContactData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
-    return Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname);
+    return id == that.id &&
+            Objects.equals(firstname, that.firstname) &&
+            Objects.equals(lastname, that.lastname) &&
+            Objects.equals(homephone, that.homephone) &&
+            Objects.equals(mail, that.mail) &&
+            Objects.equals(address, that.address);
   }
 
   @Override
   public int hashCode() {
 
-    return Objects.hash(firstname, lastname);
+    return Objects.hash(id, firstname, lastname, homephone, mail, address);
   }
+
   @Column(name = "home")
+
   @Type(type = "text")
   private String homephone;
+
   @Expose
   @Transient
   private String mail;
