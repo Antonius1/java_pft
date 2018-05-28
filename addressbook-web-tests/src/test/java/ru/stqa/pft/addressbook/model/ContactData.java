@@ -58,12 +58,12 @@ public class ContactData {
   }
 
   @Column(name = "home")
-
   @Type(type = "text")
   private String homephone;
 
   @Expose
-  @Transient
+  @Column(name = "email")
+  @Type(type = "text")
   private String mail;
   @Transient
   private String mail2;
