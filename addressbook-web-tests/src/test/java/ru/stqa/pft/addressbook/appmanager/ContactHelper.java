@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.HashSet;
 import java.util.List;
@@ -30,7 +31,7 @@ public class ContactHelper extends HelperBase {
 
   public void deleteSelectedContacts() {
     click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
-   }
+  }
 
   public void selectContactById(int id) {
     wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
@@ -53,15 +54,15 @@ public class ContactHelper extends HelperBase {
     type(By.name("email3"), contactData.getMail3());
     type(By.name("address"), contactData.getAddress());
 
-   //if (creation) {
-   //   new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-  //  } else {
-  //    Assert.assertFalse(isElementPresent(By.name("new_group")));
-   // }
+    //if (creation) {
+    //   new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+    //  } else {
+    //    Assert.assertFalse(isElementPresent(By.name("new_group")));
+    // }
   }
 
   public void closeAlert() {
-      wd.switchTo().alert().accept();
+    wd.switchTo().alert().accept();
   }
 
   public void initContactModificator() {
@@ -105,8 +106,7 @@ public class ContactHelper extends HelperBase {
   }
 
 
-
-  private  Contacts contactCache = null;
+  private Contacts contactCache = null;
 
   @Override
   public String toString() {
@@ -179,4 +179,28 @@ public class ContactHelper extends HelperBase {
   private void submitAddContactInGroup() {
     click(By.cssSelector("input[name='add']"));
   }
+
+  public void delete(ContactData contact, GroupData group) {
+    selectDeleteContactById(contact.getId());
+    goToContactsFromGroupPage(group.getId());
+    selectContactById(contact.getId());
+    submitDeleteContactFromGroup();
+    returnHome();
+    contactCache = null;
+  }
+
+  private void selectDeleteContactById(int id) {
+    wd.findElement(By.cssSelector(String.format("a[href='view.php?id=%s']", id))).click();
+  }
+
+
+  private void submitDeleteContactFromGroup() {
+    click(By.cssSelector("input[name='remove']"));
+  }
+
+  private void goToContactsFromGroupPage(int group) {
+    click(By.xpath("//div/div[4]/i/a"));
+  }
+
+
 }

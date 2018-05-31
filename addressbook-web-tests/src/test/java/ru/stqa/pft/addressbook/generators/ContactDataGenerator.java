@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
 import org.openqa.selenium.interactions.SourceType;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -82,7 +83,7 @@ public class ContactDataGenerator {
     List<ContactData> contacts = new ArrayList<ContactData>();
     for (int i = 0; i < count; i++) {
       contacts.add(new ContactData().withFirstname(String.format("firstname %s", i))
-              .withLastname(String.format("lastname %s", i)).withMail(String.format("test@test.tt %s", i)).withGroup("test1"));
+              .withLastname(String.format("lastname %s", i)).withMail(String.format("test@test.tt %s", i)).inGroup(new GroupData().withName("test1")));
     }
     return contacts;
   }
