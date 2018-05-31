@@ -168,4 +168,15 @@ public class ContactHelper extends HelperBase {
   private void initContactModificationById(int id) {
     wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();
   }
+
+  public void add(ContactData addContact) {
+    selectContactById(addContact.getId());
+    submitAddContactInGroup();
+    returnHome();
+    contactCache = null;
+  }
+
+  private void submitAddContactInGroup() {
+    click(By.cssSelector("input[name='add']"));
+  }
 }

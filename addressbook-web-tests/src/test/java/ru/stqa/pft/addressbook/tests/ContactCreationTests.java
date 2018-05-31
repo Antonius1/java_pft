@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -74,7 +75,7 @@ public class ContactCreationTests extends TestBase {
     app.contact().returnHome();
     Contacts before = app.db().contacts();
     app.contact().initContactCreation();
-    ContactData contact = new ContactData().withFirstname("test1").withLastname("test2'").withHomephone("test3").withMail("test1.test2@test4").withGroup("test1");
+    ContactData contact = new ContactData().withFirstname("test1").withLastname("test2'").withHomephone("test3").withMail("test1.test2@test4").inGroup(new GroupData().withName("test1"));
     app.contact().create(contact, true);
     app.contact().returnHome();
     assertThat(app.contact().count(), equalTo(before.size()));
