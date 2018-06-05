@@ -20,8 +20,10 @@ public class AdministratorHelper extends HelperBase {
   }
 
   public void changePass() {
-    click(linkText("Manage"));
-    click(linkText("Manage Users"));
+    wd.findElement(By.xpath("//li/a[@href=\"/mantisbt-2.14.0/manage_overview_page.php\"]")).click();
+    //click(linkText("Manage"));
+    wd.findElement(By.xpath("//ul/li/a[@href=\"/mantisbt-2.14.0/manage_user_page.php\"]")).click();
+    //click(linkText("Manage Users"));
     click(linkText("user1"));
     //click(cssSelector("input[value='Reset Password']"));
     click(xpath("//form[@id='manage-user-reset-form']/fieldset/span/input"));
