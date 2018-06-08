@@ -202,5 +202,25 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//div/div[4]/i/a"));
   }
 
+  public void chooseGroup(ContactData contactData, String groupName) {
+    if (contactData.getGroups().size() > 0) {
+      Select dropdown = new Select(wd.findElement(By.name("to_group")));
+      dropdown.selectByVisibleText(groupName);
+    }
+  }
 
+  public void selectGroup(String groupName) {
+    Select dropdown =new Select(wd.findElement(By.name("group")));
+    dropdown.selectByVisibleText(groupName);
+  }
+
+  public void deleteFromGroup() {
+    click(By.xpath("//input[@name = 'remove']"));
+  }
+
+  public void addToGroup(ContactData contact, String groupName) {
+    chooseGroup(contact, groupName);
+    submitAddContactInGroup();
+    returnHome();
+  }
 }
