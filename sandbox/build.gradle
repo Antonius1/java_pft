@@ -11,5 +11,11 @@ dependencies {
 }
 
 test {
-   useTestNG()
+   useTestNG() //{
+       //outputDirectory = file("sandbox/src/test/resources")
+       //required to turn on TestNG reports
+       //useDefaultListeners = true
+       //suites 'testng.xml'
+       //suites 'sandbox/src/test/resources/testng.xml'
+   //}
 }
